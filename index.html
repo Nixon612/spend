@@ -22,6 +22,7 @@
     --border: #e4e4e7;
     --soft: #fafafa;
     --danger: #ef4444;
+    --good: #10b981;
     --radius: 14px;
     --radius-sm: 10px;
   }
@@ -37,213 +38,85 @@
     font-variant-numeric: tabular-nums;
   }
   button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
-  input, select {
-    font: inherit;
-    color: inherit;
-    border: none;
-    background: none;
-    outline: none;
-    width: 100%;
-  }
-  .app {
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 16px;
-    padding-bottom: 60px;
-  }
+  input, select { font: inherit; color: inherit; border: none; background: none; outline: none; width: 100%; }
+  .app { max-width: 480px; margin: 0 auto; padding: 16px; padding-bottom: 60px; }
 
   .install-tip {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--dark);
-    color: #fff;
-    padding: 11px 14px;
-    border-radius: var(--radius-sm);
-    margin-bottom: 12px;
-    font-size: 13px;
+    display: flex; align-items: center; gap: 10px;
+    background: var(--dark); color: #fff;
+    padding: 11px 14px; border-radius: var(--radius-sm); margin-bottom: 12px; font-size: 13px;
   }
   .install-tip[hidden] { display: none; }
   .install-tip span { flex: 1; }
   .install-tip button {
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 500;
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    transition: background 0.15s;
+    padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 500;
+    background: rgba(255,255,255,0.15); color: #fff; transition: background 0.15s;
   }
   .install-tip button:hover { background: rgba(255,255,255,0.25); }
   .install-tip button[hidden] { display: none; }
-  .install-tip .install-x {
-    padding: 4px 8px;
-    font-size: 16px;
-    background: none;
-    opacity: 0.7;
-  }
+  .install-tip .install-x { padding: 4px 8px; font-size: 16px; background: none; opacity: 0.7; }
   .install-tip .install-x:hover { opacity: 1; background: none; }
 
   .header {
-    background: var(--dark);
-    color: #fff;
-    border-radius: var(--radius);
-    padding: 20px 20px 18px;
-    margin-bottom: 14px;
+    background: var(--dark); color: #fff;
+    border-radius: var(--radius); padding: 20px 20px 18px; margin-bottom: 14px;
   }
-  .month-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
-  }
-  .month {
-    font-size: 13px;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0.02em;
-  }
+  .month-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+  .month { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 0.02em; }
   .gear {
-    color: rgba(255,255,255,0.6);
-    padding: 4px;
-    border-radius: 6px;
-    font-size: 16px;
-    line-height: 1;
+    color: rgba(255,255,255,0.6); padding: 4px; border-radius: 6px;
+    font-size: 16px; line-height: 1;
   }
   .gear:hover { color: #fff; background: rgba(255,255,255,0.08); }
-  .remaining-amount {
-    font-size: 40px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-  }
+  .remaining-amount { font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
   .remaining-amount .cur { font-size: 28px; font-weight: 500; opacity: 0.7; margin-right: 2px; }
-  .remaining-label {
-    font-size: 13px;
-    color: rgba(255,255,255,0.55);
-    margin-top: 4px;
-  }
-  .progress {
-    height: 4px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 2px;
-    margin: 18px 0 14px;
-    overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%;
-    background: #fff;
-    border-radius: 2px;
-    transition: width 0.35s ease, background 0.2s;
-  }
+  .remaining-label { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 4px; }
+  .progress { height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; margin: 18px 0 14px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #fff; border-radius: 2px; transition: width 0.35s ease, background 0.2s; }
   .progress-fill.over { background: var(--danger); }
-  .safe-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    font-size: 13px;
-  }
+  .safe-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; }
   .safe-amount { color: #fff; font-weight: 600; }
   .safe-label { color: rgba(255,255,255,0.55); }
-  .today-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    font-size: 13px;
-    margin-top: 6px;
-  }
+  .today-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; margin-top: 6px; }
   .today-label { color: rgba(255,255,255,0.55); }
   .today-amount { color: rgba(255,255,255,0.9); }
-  .aside-row {
-    margin-top: 12px;
-    padding-top: 12px;
+  .wallet-mini {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 13px; margin-top: 10px; padding-top: 10px;
     border-top: 1px solid rgba(255,255,255,0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    font-size: 13px;
-    cursor: pointer;
-    user-select: none;
+    cursor: pointer; user-select: none;
   }
-  .aside-row:hover .aside-amount { opacity: 1; }
-  .aside-label { color: rgba(255,255,255,0.55); }
-  .aside-amount {
-    color: rgba(255,255,255,0.9);
-    font-weight: 500;
-    opacity: 0.85;
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-  }
-  .aside-amount::after {
-    content: "\2192";
-    font-size: 12px;
-    opacity: 0.5;
-  }
+  .wallet-mini:hover .wallet-mini-amount { opacity: 1; }
+  .wallet-mini-label { color: rgba(255,255,255,0.55); }
+  .wallet-mini-amount { color: rgba(255,255,255,0.9); font-weight: 500; opacity: 0.85; }
+
   .tabs {
-    display: flex;
-    gap: 4px;
-    background: var(--card);
-    padding: 4px;
-    border-radius: var(--radius-sm);
-    margin-bottom: 14px;
-    border: 1px solid var(--border);
+    display: flex; gap: 4px; background: var(--card); padding: 4px;
+    border-radius: var(--radius-sm); margin-bottom: 14px; border: 1px solid var(--border);
   }
   .tab {
-    flex: 1;
-    padding: 8px;
-    border-radius: 7px;
-    font-size: 13px;
-    color: var(--muted);
-    font-weight: 500;
-    transition: background 0.15s, color 0.15s;
+    flex: 1; padding: 8px 4px; border-radius: 7px; font-size: 12px;
+    color: var(--muted); font-weight: 500; transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
   }
-  .tab.active {
-    background: var(--dark);
-    color: #fff;
-  }
+  .tab.active { background: var(--dark); color: #fff; }
+
   .add-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px;
-    margin-bottom: 16px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px; margin-bottom: 16px;
   }
   .amount-row {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-    padding: 8px 4px 12px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 14px;
+    display: flex; align-items: baseline; gap: 4px;
+    padding: 8px 4px 12px; border-bottom: 1px solid var(--border); margin-bottom: 14px;
   }
-  .amount-row .cur {
-    font-size: 26px;
-    color: var(--muted);
-    font-weight: 500;
-  }
-  #amountInput {
-    font-size: 34px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    padding: 0;
-    line-height: 1.1;
-  }
+  .amount-row .cur { font-size: 26px; color: var(--muted); font-weight: 500; }
+  #amountInput { font-size: 34px; font-weight: 600; letter-spacing: -0.02em; padding: 0; line-height: 1.1; }
   #amountInput::placeholder { color: #d4d4d8; }
-  .categories {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 12px;
-  }
+  .categories { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
   .cat {
-    padding: 7px 12px;
-    border-radius: 999px;
-    font-size: 13px;
-    background: var(--soft);
-    color: var(--ink);
-    border: 1px solid var(--border);
-    transition: background 0.12s, border-color 0.12s, color 0.12s;
-    white-space: nowrap;
+    padding: 7px 12px; border-radius: 999px; font-size: 13px;
+    background: var(--soft); color: var(--ink); border: 1px solid var(--border);
+    transition: background 0.12s, border-color 0.12s, color 0.12s; white-space: nowrap;
   }
   .cat:hover { background: #f0f0f1; }
   .cat.active { color: #fff; border-color: transparent; }
@@ -256,322 +129,228 @@
   .cat.active[data-cat="Subscriptions"] { background: #818cf8; }
   .cat.active[data-cat="Phone"] { background: #22d3ee; }
   .cat.active[data-cat="Other"] { background: #71717a; }
-  .note-row {
-    padding: 10px 4px;
-    border-top: 1px solid var(--border);
-  }
+  .note-row { padding: 10px 4px; border-top: 1px solid var(--border); }
   #noteInput { font-size: 14px; }
   #noteInput::placeholder { color: #a1a1aa; }
   .split-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 4px;
-    border-top: 1px solid var(--border);
-    font-size: 14px;
-    color: var(--muted);
-    flex-wrap: wrap;
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 4px; border-top: 1px solid var(--border);
+    font-size: 14px; color: var(--muted); flex-wrap: wrap;
   }
-  .split-row label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    user-select: none;
-  }
-  .split-row input[type=checkbox] {
-    width: 16px; height: 16px; margin: 0;
-    accent-color: var(--dark);
-  }
+  .split-row label { display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+  .split-row input[type=checkbox] { width: 16px; height: 16px; margin: 0; accent-color: var(--dark); }
   #splitCount {
-    width: 56px;
-    padding: 6px 8px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--soft);
-    font-size: 14px;
-    text-align: center;
+    width: 56px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--soft); font-size: 14px; text-align: center;
   }
-  .split-info {
-    font-size: 13px;
-    color: var(--ink);
-    font-weight: 500;
-    margin-left: auto;
-  }
+  .split-info { font-size: 13px; color: var(--ink); font-weight: 500; margin-left: auto; }
   .add-btn {
-    width: 100%;
-    padding: 14px;
-    margin-top: 12px;
-    background: var(--dark);
-    color: #fff;
-    border-radius: var(--radius-sm);
-    font-size: 15px;
-    font-weight: 600;
-    transition: opacity 0.15s, transform 0.08s;
+    width: 100%; padding: 14px; margin-top: 12px;
+    background: var(--dark); color: #fff; border-radius: var(--radius-sm);
+    font-size: 15px; font-weight: 600; transition: opacity 0.15s, transform 0.08s;
   }
   .add-btn:disabled { opacity: 0.35; cursor: default; }
   .add-btn:not(:disabled):active { transform: scale(0.99); }
+
   .day-group { margin-bottom: 18px; }
   .day-label {
-    font-size: 12px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    padding: 0 4px 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    font-size: 12px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.06em; padding: 0 4px 8px;
+    display: flex; justify-content: space-between; align-items: baseline;
   }
   .day-total { color: var(--muted); letter-spacing: 0; text-transform: none; font-size: 13px; }
   .expenses-list {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
   }
   .exp {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--border);
-    position: relative;
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px; border-bottom: 1px solid var(--border); position: relative;
   }
   .exp:last-child { border-bottom: none; }
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .exp-body { flex: 1; min-width: 0; }
   .exp-cat { font-size: 14px; font-weight: 500; color: var(--ink); }
   .exp-note {
-    font-size: 13px;
-    color: var(--muted);
-    margin-top: 1px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 13px; color: var(--muted); margin-top: 1px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   }
   .exp-amount { font-size: 15px; font-weight: 500; color: var(--ink); flex-shrink: 0; }
+  .exp-amount.pos { color: var(--good); }
+  .exp-amount.neg { color: var(--danger); }
   .exp-delete {
-    color: #d4d4d8;
-    font-size: 18px;
-    line-height: 1;
-    padding: 4px 6px;
-    margin-right: -6px;
-    border-radius: 6px;
-    opacity: 0;
-    transition: opacity 0.15s, color 0.15s;
+    color: #d4d4d8; font-size: 18px; line-height: 1;
+    padding: 4px 6px; margin-right: -6px; border-radius: 6px;
+    opacity: 0; transition: opacity 0.15s, color 0.15s;
   }
   .exp:hover .exp-delete { opacity: 1; }
   .exp-delete:hover { color: var(--danger); }
-  @media (hover: none) {
-    .exp-delete { opacity: 1; color: #a1a1aa; }
-  }
+  @media (hover: none) { .exp-delete { opacity: 1; color: #a1a1aa; } }
+
   .breakdown {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px;
-    margin-bottom: 16px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px; margin-bottom: 16px;
   }
   .bd-title {
-    font-size: 13px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 14px;
+    font-size: 13px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 14px;
   }
-  .stack {
-    height: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    display: flex;
-    background: var(--soft);
-    margin-bottom: 16px;
-  }
+  .stack { height: 10px; border-radius: 5px; overflow: hidden; display: flex; background: var(--soft); margin-bottom: 16px; }
   .stack-seg { height: 100%; }
   .bd-rows { display: flex; flex-direction: column; gap: 10px; }
-  .bd-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-  }
+  .bd-row { display: flex; align-items: center; gap: 10px; font-size: 14px; }
   .bd-row .dot { width: 8px; height: 8px; }
   .bd-name { flex: 1; }
   .bd-pct { color: var(--muted); font-size: 13px; min-width: 42px; text-align: right; }
   .bd-amt { font-weight: 500; min-width: 72px; text-align: right; }
+
   .bucket-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px;
-    margin-bottom: 14px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px; margin-bottom: 14px;
   }
   .bucket-stack {
-    height: 12px;
-    border-radius: 6px;
-    overflow: hidden;
-    display: flex;
-    background: var(--soft);
-    margin-bottom: 18px;
+    height: 12px; border-radius: 6px; overflow: hidden;
+    display: flex; background: var(--soft); margin-bottom: 18px;
   }
   .bucket-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    padding: 9px 0;
-    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; padding: 9px 0; border-bottom: 1px solid var(--border);
   }
   .bucket-row:last-child { border-bottom: none; }
   .bucket-row .dot { width: 8px; height: 8px; flex-shrink: 0; }
   .bucket-name { flex: 1; }
-  .bucket-pct {
-    color: var(--muted);
-    font-size: 13px;
-    min-width: 42px;
-    text-align: right;
-  }
-  .bucket-amt {
-    font-weight: 500;
-    min-width: 76px;
-    text-align: right;
-  }
+  .bucket-pct { color: var(--muted); font-size: 13px; min-width: 42px; text-align: right; }
+  .bucket-amt { font-weight: 500; min-width: 76px; text-align: right; }
   .bucket-adjust {
-    color: #d4d4d8;
-    font-size: 16px;
-    line-height: 1;
-    padding: 4px 6px;
-    border-radius: 6px;
-    font-weight: 400;
-    transition: color 0.15s, background 0.15s;
-    min-width: 30px;
-    text-align: right;
+    color: #d4d4d8; font-size: 16px; line-height: 1;
+    padding: 4px 6px; border-radius: 6px; font-weight: 400;
+    transition: color 0.15s, background 0.15s; min-width: 30px; text-align: right;
   }
   .bucket-row:hover .bucket-adjust { color: var(--muted); }
   .bucket-adjust:hover { color: var(--ink); background: var(--soft); }
   .bucket-total {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding-top: 14px;
-    margin-top: 6px;
-    border-top: 1px solid var(--border);
-    font-size: 15px;
-    font-weight: 600;
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: 14px; margin-top: 6px; border-top: 1px solid var(--border);
+    font-size: 15px; font-weight: 600;
   }
-  .bucket-note {
-    font-size: 13px;
-    color: var(--muted);
-    padding: 0 4px;
-    margin-top: -6px;
-    margin-bottom: 14px;
-    line-height: 1.5;
+  .bucket-note { font-size: 13px; color: var(--muted); padding: 0 4px; margin-top: -6px; margin-bottom: 14px; line-height: 1.5; }
+
+  /* Wallet */
+  .wallet-card {
+    background: var(--dark); color: #fff;
+    border-radius: var(--radius); padding: 22px 20px 18px; margin-bottom: 16px;
   }
-  .empty {
-    text-align: center;
-    color: var(--muted);
-    padding: 40px 20px;
-    font-size: 14px;
-    font-style: italic;
+  .wallet-label { font-size: 13px; color: rgba(255,255,255,0.55); letter-spacing: 0.02em; }
+  .wallet-balance {
+    font-size: 42px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin: 4px 0 4px;
   }
+  .wallet-balance .cur { font-size: 28px; font-weight: 500; opacity: 0.7; margin-right: 2px; }
+  .wallet-sub { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .wallet-actions { display: flex; gap: 8px; margin-top: 18px; }
+  .wallet-actions button {
+    flex: 1; padding: 11px; border-radius: var(--radius-sm);
+    font-size: 14px; font-weight: 500; transition: background 0.15s;
+  }
+  .wallet-actions .primary { background: #fff; color: var(--dark); }
+  .wallet-actions .primary:hover { background: rgba(255,255,255,0.9); }
+  .wallet-actions .secondary { background: rgba(255,255,255,0.12); color: #fff; }
+  .wallet-actions .secondary:hover { background: rgba(255,255,255,0.2); }
+
+  .wallet-stat-row { display: flex; gap: 10px; margin-bottom: 16px; }
+  .wallet-stat {
+    flex: 1; background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px 16px;
+  }
+  .wallet-stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .wallet-stat-value { font-size: 18px; font-weight: 600; margin-top: 4px; }
+
+  /* Week */
+  .week-card {
+    background: var(--dark); color: #fff;
+    border-radius: var(--radius); padding: 22px 20px 18px; margin-bottom: 16px;
+  }
+  .week-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+  .week-label { font-size: 13px; color: rgba(255,255,255,0.55); }
+  .week-range { font-size: 12px; color: rgba(255,255,255,0.45); }
+  .week-amount { font-size: 38px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+  .week-amount .cur { font-size: 26px; font-weight: 500; opacity: 0.7; margin-right: 2px; }
+  .week-sub { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 4px; }
+  .week-progress { height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; margin: 18px 0 14px; overflow: hidden; }
+  .week-progress-fill { height: 100%; background: #fff; border-radius: 2px; transition: width 0.35s ease; }
+  .week-progress-fill.over { background: var(--danger); }
+  .week-meta { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; }
+  .week-meta-label { color: rgba(255,255,255,0.55); }
+  .week-meta-value { color: rgba(255,255,255,0.9); font-weight: 500; }
+
+  .week-days {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+  }
+  .week-day {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px; border-bottom: 1px solid var(--border);
+  }
+  .week-day:last-child { border-bottom: none; }
+  .week-day.today { background: var(--soft); }
+  .week-day-name { font-size: 14px; font-weight: 500; width: 44px; }
+  .week-day.today .week-day-name { color: var(--dark); }
+  .week-day-bar {
+    flex: 1; height: 6px; background: var(--soft);
+    border-radius: 3px; overflow: hidden; position: relative;
+  }
+  .week-day.today .week-day-bar { background: rgba(0,0,0,0.06); }
+  .week-day-bar-fill { height: 100%; background: var(--dark); border-radius: 3px; }
+  .week-day-amt { font-size: 13px; color: var(--muted); width: 56px; text-align: right; }
+  .week-day.today .week-day-amt { color: var(--ink); font-weight: 500; }
+
+  .empty { text-align: center; color: var(--muted); padding: 40px 20px; font-size: 14px; font-style: italic; }
+
   .modal-bg {
-    position: fixed;
-    inset: 0;
-    background: rgba(24,24,27,0.5);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    z-index: 50;
+    position: fixed; inset: 0; background: rgba(24,24,27,0.5);
+    display: none; align-items: center; justify-content: center; padding: 20px; z-index: 50;
   }
   .modal-bg.show { display: flex; }
   .modal {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 22px;
-    width: 100%;
-    max-width: 380px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-    max-height: 90vh;
-    overflow-y: auto;
+    background: var(--card); border-radius: var(--radius);
+    padding: 22px; width: 100%; max-width: 380px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2); max-height: 90vh; overflow-y: auto;
   }
-  .modal-title {
-    font-size: 17px;
-    font-weight: 600;
-    margin: 0 0 16px;
-  }
+  .modal-title { font-size: 17px; font-weight: 600; margin: 0 0 8px; }
+  .modal-sub { font-size: 13px; color: var(--muted); margin: 0 0 18px; line-height: 1.5; }
   .field { margin-bottom: 14px; }
   .field label {
-    display: block;
-    font-size: 12px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 6px;
+    display: block; font-size: 12px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;
   }
   .field input, .field select {
-    padding: 11px 12px;
-    background: var(--soft);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font-size: 15px;
-    width: 100%;
+    padding: 11px 12px; background: var(--soft); border: 1px solid var(--border);
+    border-radius: 8px; font-size: 15px; width: 100%;
   }
   .field input:focus, .field select:focus { border-color: var(--dark); }
-  .field-row {
-    display: flex;
-    gap: 10px;
-  }
+  .field-row { display: flex; gap: 10px; }
   .field-row .field { flex: 1; }
+  .field-hint { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.4; }
   .allocation-summary {
-    padding: 10px 12px;
-    background: var(--soft);
-    border-radius: 8px;
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 16px;
-    line-height: 1.5;
+    padding: 10px 12px; background: var(--soft); border-radius: 8px;
+    font-size: 13px; color: var(--muted); margin-bottom: 16px; line-height: 1.5;
   }
   .allocation-summary .over { color: var(--danger); font-weight: 500; }
-  .modal-actions {
-    display: flex;
-    gap: 8px;
-    margin-top: 20px;
-  }
+  .modal-actions { display: flex; gap: 8px; margin-top: 20px; }
   .modal-actions button {
-    flex: 1;
-    padding: 11px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    border: 1px solid var(--border);
-    color: var(--muted);
+    flex: 1; padding: 11px; border-radius: 8px;
+    font-size: 14px; font-weight: 500;
+    border: 1px solid var(--border); color: var(--muted);
   }
-  .modal-actions button.primary {
-    background: var(--dark);
-    color: #fff;
-    border-color: var(--dark);
-  }
-  .modal-actions button.danger {
-    color: var(--danger);
-    border-color: var(--border);
-  }
+  .modal-actions button.primary { background: var(--dark); color: #fff; border-color: var(--dark); }
+  .modal-actions button.danger { color: var(--danger); border-color: var(--border); }
   .modal-actions button:hover:not(.primary):not(.danger) { background: var(--soft); }
   .modal-actions button.danger:hover { background: #fef2f2; }
   .modal-actions.three { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .modal-actions.three button:first-child { grid-column: 1 / -1; }
+
   .welcome {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 22px;
-    margin-bottom: 16px;
-    text-align: center;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px; margin-bottom: 16px; text-align: center;
   }
   .welcome h2 { margin: 0 0 6px; font-size: 17px; font-weight: 600; }
   .welcome p { margin: 0 0 18px; color: var(--muted); font-size: 14px; }
@@ -589,15 +368,10 @@
 
   <div class="header" id="header"></div>
 
-  <div class="tabs">
-    <button class="tab active" data-tab="spend">Spend</button>
-    <button class="tab" data-tab="month">Month</button>
-    <button class="tab" data-tab="aside">Set aside</button>
-  </div>
+  <div class="tabs" id="tabsBar"></div>
 
   <div id="spendTab">
     <div id="welcomeSlot"></div>
-
     <div class="add-card" id="addCard">
       <div class="amount-row">
         <span class="cur" id="curSymbol">&#8377;</span>
@@ -617,9 +391,10 @@
       </div>
       <button class="add-btn" id="addBtn" disabled>Add</button>
     </div>
-
     <div id="expenseList"></div>
   </div>
+
+  <div id="weekTab" hidden></div>
 
   <div id="monthTab" hidden>
     <div class="breakdown" id="breakdown"></div>
@@ -629,6 +404,8 @@
   <div id="asideTab" hidden>
     <div id="asideContent"></div>
   </div>
+
+  <div id="walletTab" hidden></div>
 </div>
 
 <div class="modal-bg" id="settingsModal">
@@ -637,6 +414,10 @@
 
 <div class="modal-bg" id="adjustModal">
   <div class="modal" id="adjustBody"></div>
+</div>
+
+<div class="modal-bg" id="walletModal">
+  <div class="modal" id="walletBody"></div>
 </div>
 
 <script>
@@ -707,7 +488,11 @@ const DEFAULT_CONFIG = {
   locale: 'en-IN',
   allocations: { emergency: 0, savings: 0, buffer: 0 },
   totals: { emergency: 0, savings: 0, buffer: 0 },
-  lastRolledMonth: null
+  lastRolledMonth: null,
+  wallet: [],
+  weeklyEnabled: false,
+  weekStartsMonday: true,
+  weeklyBudget: 0
 };
 
 // ============ State ============
@@ -727,22 +512,36 @@ function load() {
       config = Object.assign({}, DEFAULT_CONFIG, c);
       config.allocations = Object.assign({}, DEFAULT_CONFIG.allocations, c.allocations || {});
       config.totals = Object.assign({}, DEFAULT_CONFIG.totals, c.totals || {});
+      if (!Array.isArray(config.wallet)) config.wallet = [];
+      if (typeof config.weeklyBudget !== 'number') config.weeklyBudget = 0;
     }
   } catch (e) {}
   lastCategory = Store.get(LASTCAT_KEY) || 'Food';
   selectedCategory = lastCategory;
 }
-function save() {
-  Store.set(EXP_KEY, JSON.stringify(expenses));
-}
-function saveConfig() {
-  Store.set(CFG_KEY, JSON.stringify(config));
-}
+function save() { Store.set(EXP_KEY, JSON.stringify(expenses)); }
+function saveConfig() { Store.set(CFG_KEY, JSON.stringify(config)); }
 
-// ============ Month rollover ============
+// ============ Month / week helpers ============
 function monthKey(d) {
   d = d || new Date();
   return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0');
+}
+function startOfWeek(d) {
+  d = d ? new Date(d) : new Date();
+  d.setHours(0, 0, 0, 0);
+  const day = d.getDay();
+  const target = config.weekStartsMonday ? 1 : 0;
+  const diff = (day - target + 7) % 7;
+  d.setDate(d.getDate() - diff);
+  return d;
+}
+function endOfWeek(d) {
+  const s = startOfWeek(d);
+  const e = new Date(s);
+  e.setDate(e.getDate() + 6);
+  e.setHours(23, 59, 59, 999);
+  return e;
 }
 function rollMonth() {
   const current = monthKey();
@@ -810,10 +609,48 @@ function bucketName(key) {
   return b ? b.name : key;
 }
 
+// ============ Wallet & allotments ============
+function walletBalance() {
+  return (config.wallet || []).reduce(function(s, t) {
+    if (t.type === 'in') return s + t.amount;
+    if (t.type === 'out') return s - t.amount;
+    if (t.type === 'allot') return s - t.amount;
+    if (t.type === 'refund') return s + t.amount;
+    return s;
+  }, 0);
+}
+function walletAllottedToMonth(mk) {
+  return (config.wallet || [])
+    .filter(function(t) { return t.type === 'allot' && t.month === mk; })
+    .reduce(function(s, t) { return s + t.amount; }, 0)
+    - (config.wallet || [])
+    .filter(function(t) { return t.type === 'refund' && t.month === mk; })
+    .reduce(function(s, t) { return s + t.amount; }, 0);
+}
+function budgetForMonth(mk) {
+  return config.budget + walletAllottedToMonth(mk);
+}
+
+// ============ Weekly budget resolution ============
+// If user has set an explicit weeklyBudget, use it.
+// Otherwise derive from this month's spending budget (monthBudget * 7 / days).
+function resolveWeeklyBudget() {
+  const m = getMonthData();
+  if (config.weeklyBudget > 0) {
+    return { amount: config.weeklyBudget, source: 'set', monthData: m };
+  }
+  const daysInMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();
+  return {
+    amount: m.spendingBudget * (7 / daysInMonth),
+    source: 'derived',
+    monthData: m
+  };
+}
+
 // ============ Budget math ============
-function getAllocationAmounts() {
+function getAllocationAmounts(monthBudget) {
   const a = config.allocations || { emergency: 0, savings: 0, buffer: 0 };
-  const b = config.budget;
+  const b = monthBudget != null ? monthBudget : config.budget;
   return {
     emergency: b * (a.emergency || 0) / 100,
     savings:   b * (a.savings   || 0) / 100,
@@ -823,6 +660,7 @@ function getAllocationAmounts() {
 }
 function getMonthData() {
   const now = new Date();
+  const mk = monthKey(now);
   const monthStart = new Date(now.getFullYear(), now.getMonth(), 1);
   const monthEnd = new Date(now.getFullYear(), now.getMonth() + 1, 1);
   const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
@@ -833,8 +671,9 @@ function getMonthData() {
     return d >= monthStart && d < monthEnd;
   });
 
-  const alloc = getAllocationAmounts();
-  const spendingBudget = Math.max(0, config.budget - alloc.emergency - alloc.savings - alloc.buffer);
+  const monthBudget = budgetForMonth(mk);
+  const alloc = getAllocationAmounts(monthBudget);
+  const spendingBudget = Math.max(0, monthBudget - alloc.emergency - alloc.savings - alloc.buffer);
 
   const spent = monthExpenses.reduce(function(s, e) { return s + effectiveAmount(e); }, 0);
   const remaining = spendingBudget - spent;
@@ -847,6 +686,8 @@ function getMonthData() {
 
   return {
     monthName: monthName,
+    monthKey: mk,
+    monthBudget: monthBudget,
     monthExpenses: monthExpenses,
     spent: spent,
     remaining: remaining,
@@ -864,16 +705,21 @@ function getMonthData() {
 // ============ Render: header ============
 function renderHeader() {
   const el = document.getElementById('header');
-  if (config.budget <= 0) { el.style.display = 'none'; return; }
+  if (config.budget <= 0 && (config.wallet || []).length === 0) {
+    el.style.display = 'none';
+    return;
+  }
   el.style.display = 'block';
   const m = getMonthData();
   const sign = m.remaining < 0 ? '\u2212' : '';
+  const walletBal = walletBalance();
+  const hasWalletEntries = (config.wallet || []).length > 0;
 
-  let asideHtml = '';
-  if (m.setAside > 0) {
-    asideHtml = '<div class="aside-row" id="asideShortcut">'
-      + '<span class="aside-label">Set aside</span>'
-      + '<span class="aside-amount">' + escapeHtml(config.currency) + fmt(m.setAside) + '</span>'
+  let walletMini = '';
+  if (hasWalletEntries) {
+    walletMini = '<div class="wallet-mini" id="walletShortcut">'
+      + '<span class="wallet-mini-label">Wallet balance</span>'
+      + '<span class="wallet-mini-amount">' + escapeHtml(config.currency) + fmt(walletBal) + '</span>'
       + '</div>';
   }
 
@@ -897,11 +743,35 @@ function renderHeader() {
     +   '<span class="today-label">Today</span>'
     +   '<span class="today-amount">' + escapeHtml(config.currency) + fmt(m.spentToday) + '</span>'
     + '</div>'
-    + asideHtml;
+    + walletMini;
 
   document.getElementById('gearBtn').addEventListener('click', openSettings);
-  const sc = document.getElementById('asideShortcut');
-  if (sc) sc.addEventListener('click', function() { switchTab('aside'); });
+  const ws = document.getElementById('walletShortcut');
+  if (ws) ws.addEventListener('click', function() { switchTab('wallet'); });
+}
+
+// ============ Render: tabs ============
+function renderTabs() {
+  const tabs = document.getElementById('tabsBar');
+  const items = [
+    { key: 'spend', label: 'Spend' },
+    { key: 'month', label: 'Month' },
+    { key: 'aside', label: 'Aside' },
+    { key: 'wallet', label: 'Wallet' }
+  ];
+  if (config.weeklyEnabled) {
+    items.splice(1, 0, { key: 'week', label: 'Week' });
+  }
+  tabs.innerHTML = items.map(function(t) {
+    return '<button class="tab" data-tab="' + t.key + '">' + t.label + '</button>';
+  }).join('');
+  tabs.querySelectorAll('.tab').forEach(function(btn) {
+    btn.addEventListener('click', function() { switchTab(btn.dataset.tab); });
+  });
+  const current = window._currentTab || 'spend';
+  tabs.querySelectorAll('.tab').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.tab === current);
+  });
 }
 
 // ============ Render: categories ============
@@ -1061,10 +931,9 @@ function renderBreakdown() {
   expEl.innerHTML = html;
 }
 
-// ============ Render: set aside tab ============
+// ============ Render: set aside ============
 function renderAside() {
   const el = document.getElementById('asideContent');
-
   if (config.budget <= 0) {
     el.innerHTML = '<div class="empty">Set a budget first.</div>';
     return;
@@ -1077,7 +946,7 @@ function renderAside() {
     el.innerHTML = '<div class="bucket-card" style="text-align:center">'
       + '<h3 style="margin:0 0 6px;font-size:16px;font-weight:600">Nothing set aside yet</h3>'
       + '<p style="margin:0 0 18px;color:var(--muted);font-size:14px">'
-      + 'Pick a percentage of your budget to protect every month. Emergency, savings, buffer, whatever fits.'
+      + 'Pick a percentage of your budget to protect every month.'
       + '</p>'
       + '<button class="add-btn" id="asideOpenSettings" style="margin-top:0">Configure</button>'
       + '</div>';
@@ -1158,6 +1027,176 @@ function renderAside() {
   });
 }
 
+// ============ Render: wallet ============
+function renderWallet() {
+  const el = document.getElementById('walletTab');
+  const balance = walletBalance();
+  const mk = monthKey();
+  const monthName = new Date().toLocaleDateString(config.locale, { month: 'long' });
+  const allottedThisMonth = walletAllottedToMonth(mk);
+
+  let historyHtml = '';
+  const list = (config.wallet || []).slice().sort(function(a, b) {
+    return new Date(b.created) - new Date(a.created);
+  });
+  if (list.length === 0) {
+    historyHtml = '<div class="empty" style="padding:30px 20px">No wallet activity yet.<br>Add money when you get paid, then allot it to your budget.</div>';
+  } else {
+    const groups = new Map();
+    for (const t of list) {
+      const key = new Date(t.created).toDateString();
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(t);
+    }
+    for (const entry of groups) {
+      const dayList = entry[1];
+      const d = new Date(dayList[0].created);
+      historyHtml += '<div class="day-group">'
+        + '<div class="day-label"><span>' + escapeHtml(dayLabel(d)) + '</span></div>'
+        + '<div class="expenses-list">';
+      for (const t of dayList) {
+        const isPositive = (t.type === 'in' || t.type === 'refund');
+        const sign = isPositive ? '+' : '\u2212';
+        const cls = isPositive ? 'pos' : 'neg';
+        const label = t.note || defaultWalletLabel(t);
+        historyHtml += '<div class="exp">'
+          + '<div class="exp-body"><div class="exp-cat">' + escapeHtml(label) + '</div>'
+          + (t.month ? '<div class="exp-note">' + escapeHtml(monthLabelFromKey(t.month)) + '</div>' : '')
+          + '</div>'
+          + '<div class="exp-amount ' + cls + '">' + sign + escapeHtml(config.currency) + fmt(t.amount) + '</div>'
+          + '<button class="exp-delete" data-wdel="' + t.id + '" aria-label="Delete">\u00D7</button>'
+          + '</div>';
+      }
+      historyHtml += '</div></div>';
+    }
+  }
+
+  el.innerHTML =
+    '<div class="wallet-card">'
+    + '<div class="wallet-label">In wallet</div>'
+    + '<div class="wallet-balance"><span class="cur">' + escapeHtml(config.currency) + '</span>' + fmt(Math.max(0, balance)) + '</div>'
+    + '<div class="wallet-sub">Available to allot or keep</div>'
+    + '<div class="wallet-actions">'
+    +   '<button class="primary" id="addMoneyBtn">Add money</button>'
+    +   '<button class="secondary" id="allotBtn">Allot</button>'
+    + '</div>'
+    + '</div>'
+    + '<div class="wallet-stat-row">'
+    +   '<div class="wallet-stat"><div class="wallet-stat-label">Allotted ' + escapeHtml(monthName) + '</div>'
+    +     '<div class="wallet-stat-value">' + escapeHtml(config.currency) + fmt(allottedThisMonth) + '</div></div>'
+    +   '<div class="wallet-stat"><div class="wallet-stat-label">' + escapeHtml(monthName) + ' budget</div>'
+    +     '<div class="wallet-stat-value">' + escapeHtml(config.currency) + fmt(budgetForMonth(mk)) + '</div></div>'
+    + '</div>'
+    + historyHtml;
+
+  document.getElementById('addMoneyBtn').addEventListener('click', openAddMoney);
+  document.getElementById('allotBtn').addEventListener('click', openAllot);
+  el.querySelectorAll('[data-wdel]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const id = btn.dataset.wdel;
+      if (!confirm('Delete this wallet entry? The budget will adjust accordingly.')) return;
+      config.wallet = (config.wallet || []).filter(function(t) { return t.id !== id; });
+      saveConfig();
+      renderAll();
+    });
+  });
+}
+
+function defaultWalletLabel(t) {
+  if (t.type === 'in') return 'Money in';
+  if (t.type === 'out') return 'Money out';
+  if (t.type === 'allot') return 'Allotted to budget';
+  if (t.type === 'refund') return 'Refunded from budget';
+  return 'Entry';
+}
+function monthLabelFromKey(mk) {
+  const parts = mk.split('-');
+  const d = new Date(Number(parts[0]), Number(parts[1]) - 1, 1);
+  return d.toLocaleDateString(config.locale, { month: 'long', year: 'numeric' });
+}
+
+// ============ Render: week ============
+function renderWeek() {
+  const el = document.getElementById('weekTab');
+  const r = resolveWeeklyBudget();
+  const weeklyBudget = r.amount;
+  const source = r.source;
+
+  const ws = startOfWeek();
+  const we = endOfWeek();
+
+  const weekExpenses = expenses.filter(function(e) {
+    const d = new Date(e.created);
+    return d >= ws && d <= we;
+  });
+  const weekSpent = weekExpenses.reduce(function(s, e) { return s + effectiveAmount(e); }, 0);
+  const weekRemaining = weeklyBudget - weekSpent;
+  const pct = weeklyBudget > 0 ? Math.min(100, (weekSpent / weeklyBudget) * 100) : 0;
+  const over = weekSpent > weeklyBudget;
+
+  const rangeStr = ws.toLocaleDateString(config.locale, { month: 'short', day: 'numeric' })
+    + ' \u2013 ' + we.toLocaleDateString(config.locale, { month: 'short', day: 'numeric' });
+
+  const dayNames = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const startsMonday = config.weekStartsMonday;
+  const todayKey = new Date().toDateString();
+  const dayTotals = [];
+  let maxDay = 1;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(ws);
+    d.setDate(d.getDate() + i);
+    const dayExp = weekExpenses.filter(function(e) {
+      return new Date(e.created).toDateString() === d.toDateString();
+    });
+    const total = dayExp.reduce(function(s, e) { return s + effectiveAmount(e); }, 0);
+    if (total > maxDay) maxDay = total;
+    dayTotals.push({
+      date: d,
+      label: dayNames[startsMonday ? i : (i + 6) % 7],
+      total: total,
+      isToday: d.toDateString() === todayKey,
+      isFuture: d > new Date()
+    });
+  }
+
+  let daysHtml = '';
+  for (const d of dayTotals) {
+    const barPct = maxDay > 0 ? (d.total / maxDay) * 100 : 0;
+    daysHtml += '<div class="week-day' + (d.isToday ? ' today' : '') + '">'
+      + '<span class="week-day-name">' + d.label + '</span>'
+      + '<div class="week-day-bar"><div class="week-day-bar-fill" style="width:' + barPct + '%"></div></div>'
+      + '<span class="week-day-amt">' + (d.isFuture ? '\u2014' : escapeHtml(config.currency) + fmt(d.total)) + '</span>'
+      + '</div>';
+  }
+
+  let sourceNote;
+  if (source === 'set') {
+    sourceNote = 'Weekly budget is set independently in Settings. '
+      + 'The monthly budget still applies overall \u2014 this is a separate pace to hold yourself to.';
+  } else {
+    sourceNote = 'Weekly budget is this month\u2019s spending budget spread across 7 days. '
+      + 'Set an explicit weekly budget in Settings if you want a fixed number.';
+  }
+
+  el.innerHTML =
+    '<div class="week-card">'
+    + '<div class="week-header">'
+    +   '<div class="week-label">This week</div>'
+    +   '<div class="week-range">' + escapeHtml(rangeStr) + '</div>'
+    + '</div>'
+    + '<div class="week-amount"><span class="cur">' + escapeHtml(config.currency) + '</span>' + fmt(Math.max(0, weekRemaining)) + '</div>'
+    + '<div class="week-sub">' + (over ? 'over for this week' : 'left for this week') + '</div>'
+    + '<div class="week-progress"><div class="week-progress-fill' + (over ? ' over' : '') + '" style="width:' + pct + '%"></div></div>'
+    + '<div class="week-meta">'
+    +   '<span class="week-meta-label">Weekly budget ' + escapeHtml(config.currency) + fmt(weeklyBudget) + '</span>'
+    +   '<span class="week-meta-value">Spent ' + escapeHtml(config.currency) + fmt(weekSpent) + '</span>'
+    + '</div>'
+    + '</div>'
+    + '<div class="bd-title" style="margin:0 4px 10px">Days this week</div>'
+    + '<div class="week-days">' + daysHtml + '</div>'
+    + '<div class="bucket-note" style="margin-top:14px">' + sourceNote + '</div>';
+}
+
 // ============ Render: welcome ============
 function renderWelcome() {
   const el = document.getElementById('welcomeSlot');
@@ -1191,11 +1230,14 @@ function renderWelcome() {
 // ============ Render all ============
 function renderAll() {
   renderHeader();
+  renderTabs();
   renderCategories();
   renderWelcome();
   renderExpenseList();
   renderBreakdown();
   renderAside();
+  renderWallet();
+  renderWeek();
 }
 
 // ============ Add expense ============
@@ -1219,11 +1261,8 @@ function addExpense() {
     : 1;
 
   expenses.push({
-    id: uid(),
-    amount: amount,
-    category: selectedCategory,
-    note: noteInput.value.trim(),
-    split: split,
+    id: uid(), amount: amount, category: selectedCategory,
+    note: noteInput.value.trim(), split: split,
     created: new Date().toISOString()
   });
   save();
@@ -1245,7 +1284,6 @@ function updateSplitInfo() {
   const splitToggle = document.getElementById('splitToggle');
   const splitCountInput = document.getElementById('splitCount');
   const infoEl = document.getElementById('splitInfo');
-
   splitCountInput.hidden = !splitToggle.checked;
   if (!splitToggle.checked) { infoEl.hidden = true; return; }
   const amount = parseFloat(String(amtInput.value).replace(/,/g, '')) || 0;
@@ -1255,7 +1293,102 @@ function updateSplitInfo() {
   infoEl.textContent = 'Your share: ' + config.currency + fmt(amount / n);
 }
 
-// ============ Settings modal ============
+// ============ Wallet modals ============
+function openAddMoney() {
+  const modal = document.getElementById('walletModal');
+  const body = document.getElementById('walletBody');
+  body.innerHTML =
+    '<div class="modal-title">Add money</div>'
+    + '<p class="modal-sub">Salary, allowance, gift, refund \u2014 anything that comes in.</p>'
+    + '<div class="field"><label for="moneyAmount">Amount</label>'
+    +   '<input type="text" inputmode="decimal" id="moneyAmount" placeholder="0" autocomplete="off"></div>'
+    + '<div class="field"><label for="moneyNote">Note (optional)</label>'
+    +   '<input type="text" id="moneyNote" placeholder="From mom" autocomplete="off"></div>'
+    + '<div class="modal-actions">'
+    +   '<button id="cancelMoney">Cancel</button>'
+    +   '<button class="primary" id="saveMoney">Add</button>'
+    + '</div>';
+  modal.classList.add('show');
+  const amtInput = document.getElementById('moneyAmount');
+  const noteInput = document.getElementById('moneyNote');
+  setTimeout(function() { amtInput.focus(); }, 50);
+
+  function submit() {
+    const amount = parseFloat(String(amtInput.value).replace(/,/g, '')) || 0;
+    if (amount <= 0) { amtInput.focus(); return; }
+    config.wallet.push({
+      id: uid(), type: 'in', amount: amount,
+      note: noteInput.value.trim(),
+      created: new Date().toISOString()
+    });
+    saveConfig();
+    modal.classList.remove('show');
+    renderAll();
+  }
+  document.getElementById('saveMoney').addEventListener('click', submit);
+  amtInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+  noteInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+  document.getElementById('cancelMoney').addEventListener('click', function() {
+    modal.classList.remove('show');
+  });
+}
+
+function openAllot() {
+  const modal = document.getElementById('walletModal');
+  const body = document.getElementById('walletBody');
+  const bal = walletBalance();
+  const mk = monthKey();
+  const monthName = monthLabelFromKey(mk);
+  const alreadyAllotted = walletAllottedToMonth(mk);
+  const baseBudget = config.budget;
+
+  body.innerHTML =
+    '<div class="modal-title">Allot to ' + escapeHtml(monthName) + '</div>'
+    + '<p class="modal-sub">Move money from your wallet into this month\u2019s budget. Wallet balance: '
+    + escapeHtml(config.currency) + fmt(bal) + '</p>'
+    + '<div class="allocation-summary">'
+    +   'Base budget: ' + escapeHtml(config.currency) + fmt(baseBudget) + '<br>'
+    +   'Already allotted: ' + escapeHtml(config.currency) + fmt(alreadyAllotted) + '<br>'
+    +   '<strong style="color:var(--ink)">Current month budget: '
+    +   escapeHtml(config.currency) + fmt(budgetForMonth(mk)) + '</strong>'
+    + '</div>'
+    + '<div class="field"><label for="allotAmount">Amount to add</label>'
+    +   '<input type="text" inputmode="decimal" id="allotAmount" placeholder="0" autocomplete="off"></div>'
+    + '<div class="field"><label for="allotNote">Note (optional)</label>'
+    +   '<input type="text" id="allotNote" placeholder="October top-up" autocomplete="off"></div>'
+    + '<div class="modal-actions">'
+    +   '<button id="cancelAllot">Cancel</button>'
+    +   '<button class="primary" id="saveAllot">Allot</button>'
+    + '</div>';
+  modal.classList.add('show');
+  const amtInput = document.getElementById('allotAmount');
+  const noteInput = document.getElementById('allotNote');
+  setTimeout(function() { amtInput.focus(); }, 50);
+
+  function submit() {
+    const amount = parseFloat(String(amtInput.value).replace(/,/g, '')) || 0;
+    if (amount <= 0) { amtInput.focus(); return; }
+    if (amount > bal) {
+      if (!confirm('That is more than your wallet balance. Continue anyway?')) return;
+    }
+    config.wallet.push({
+      id: uid(), type: 'allot', amount: amount, month: mk,
+      note: noteInput.value.trim(),
+      created: new Date().toISOString()
+    });
+    saveConfig();
+    modal.classList.remove('show');
+    renderAll();
+  }
+  document.getElementById('saveAllot').addEventListener('click', submit);
+  amtInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+  noteInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+  document.getElementById('cancelAllot').addEventListener('click', function() {
+    modal.classList.remove('show');
+  });
+}
+
+// ============ Settings ============
 function openSettings() {
   const modal = document.getElementById('settingsModal');
   const body = document.getElementById('settingsBody');
@@ -1267,16 +1400,14 @@ function openSettings() {
       + '>' + escapeHtml(c.symbol) + ' (' + escapeHtml(c.locale) + ')</option>';
   }).join('');
 
+  const weeklyVal = config.weeklyBudget > 0 ? config.weeklyBudget : '';
+
   body.innerHTML =
     '<div class="modal-title">Settings</div>'
-    + '<div class="field">'
-    +   '<label for="sBudget">Monthly budget (' + escapeHtml(config.currency) + ')</label>'
-    +   '<input type="text" inputmode="decimal" id="sBudget" value="' + (config.budget || '') + '" autocomplete="off">'
-    + '</div>'
-    + '<div class="field">'
-    +   '<label for="sCurrency">Currency</label>'
-    +   '<select id="sCurrency">' + currencyOptions + '</select>'
-    + '</div>'
+    + '<div class="field"><label for="sBudget">Base monthly budget (' + escapeHtml(config.currency) + ')</label>'
+    +   '<input type="text" inputmode="decimal" id="sBudget" value="' + (config.budget || '') + '" autocomplete="off"></div>'
+    + '<div class="field"><label for="sCurrency">Currency</label>'
+    +   '<select id="sCurrency">' + currencyOptions + '</select></div>'
     + '<div class="bd-title" style="margin-top:20px;margin-bottom:10px">Set aside</div>'
     + '<div class="field-row">'
     +   '<div class="field"><label>Emergency %</label>'
@@ -1287,6 +1418,18 @@ function openSettings() {
     +     '<input type="number" id="sBuffer" min="0" max="100" value="' + (a.buffer || 0) + '"></div>'
     + '</div>'
     + '<div class="allocation-summary" id="allocSummary"></div>'
+    + '<div class="bd-title" style="margin-top:20px;margin-bottom:10px">Weekly view</div>'
+    + '<div class="field">'
+    +   '<label style="display:flex;align-items:center;gap:10px;text-transform:none;letter-spacing:0;font-size:14px;color:var(--ink);cursor:pointer;">'
+    +     '<input type="checkbox" id="sWeekly"' + (config.weeklyEnabled ? ' checked' : '') + ' style="width:16px;height:16px;accent-color:var(--dark)">'
+    +     'Show Week tab'
+    +   '</label>'
+    + '</div>'
+    + '<div class="field"><label for="sWeeklyBudget">Weekly budget (' + escapeHtml(config.currency) + ') \u2014 optional</label>'
+    +   '<input type="text" inputmode="decimal" id="sWeeklyBudget" value="' + weeklyVal + '" placeholder="Leave blank to derive from monthly" autocomplete="off">'
+    +   '<div class="field-hint">Set a fixed weekly number (like 200 from a 1000 monthly) to hold yourself to a pace. '
+    +   'If blank, the Week tab spreads this month\u2019s spending budget across 7 days.</div>'
+    + '</div>'
     + '<div class="modal-actions three">'
     +   '<button id="resetTotalsBtn">Reset accumulated totals</button>'
     +   '<button class="danger" id="exportBtn">Export</button>'
@@ -1307,13 +1450,8 @@ function openSettings() {
     const f = parseInt(document.getElementById('sBuffer').value, 10) || 0;
     const total = e + s + f;
     const el = document.getElementById('allocSummary');
-    if (b <= 0) {
-      el.textContent = 'Set a budget to see how this splits.';
-      return;
-    }
-    const em = b * e / 100;
-    const sa = b * s / 100;
-    const bu = b * f / 100;
+    if (b <= 0) { el.textContent = 'Set a budget to see how this splits.'; return; }
+    const em = b * e / 100, sa = b * s / 100, bu = b * f / 100;
     const spending = b - em - sa - bu;
     if (total > 100) {
       el.innerHTML = '<span class="over">' + total + '% is more than 100%. Reduce the percentages.</span>';
@@ -1342,12 +1480,21 @@ function openSettings() {
     }
     const cur = document.getElementById('sCurrency').value;
     const found = CURRENCIES.find(function(c) { return c.symbol === cur; });
+    const wbRaw = String(document.getElementById('sWeeklyBudget').value).replace(/,/g, '').trim();
+    const wb = wbRaw === '' ? 0 : Math.max(0, parseFloat(wbRaw) || 0);
+
     config.budget = b;
     config.currency = cur;
     config.locale = found ? found.locale : 'en-US';
     config.allocations = { emergency: e, savings: s, buffer: f };
+    config.weeklyEnabled = document.getElementById('sWeekly').checked;
+    config.weeklyBudget = wb;
     saveConfig();
     modal.classList.remove('show');
+    if (!config.weeklyEnabled && window._currentTab === 'week') {
+      window._currentTab = 'spend';
+      switchTab('spend');
+    }
     renderAll();
   });
 
@@ -1389,6 +1536,8 @@ function openSettings() {
           config = Object.assign({}, DEFAULT_CONFIG, data.config);
           config.allocations = Object.assign({}, DEFAULT_CONFIG.allocations, data.config.allocations || {});
           config.totals = Object.assign({}, DEFAULT_CONFIG.totals, data.config.totals || {});
+          if (!Array.isArray(config.wallet)) config.wallet = [];
+          if (typeof config.weeklyBudget !== 'number') config.weeklyBudget = 0;
           saveConfig();
         }
         save();
@@ -1404,13 +1553,14 @@ function openSettings() {
   });
 
   document.getElementById('resetBtn').addEventListener('click', function() {
-    if (!confirm('Delete all expenses and reset settings? This cannot be undone.')) return;
+    if (!confirm('Delete all expenses, wallet entries, and reset settings? This cannot be undone.')) return;
     expenses = [];
     config = JSON.parse(JSON.stringify(DEFAULT_CONFIG));
     save();
     saveConfig();
     Store.remove(LASTCAT_KEY);
     modal.classList.remove('show');
+    switchTab('spend');
     renderAll();
   });
 }
@@ -1425,20 +1575,15 @@ function openAdjust(key) {
 
   body.innerHTML =
     '<div class="modal-title">' + escapeHtml(name) + '</div>'
-    + '<p style="margin:0 0 18px;color:var(--muted);font-size:14px">'
-    + 'Current: <strong style="color:' + color + '">' + escapeHtml(config.currency) + fmt(current) + '</strong>'
-    + '</p>'
-    + '<div class="field">'
-    +   '<label for="adjustAmount">Amount</label>'
-    +   '<input type="text" inputmode="decimal" id="adjustAmount" placeholder="0" autocomplete="off">'
-    + '</div>'
+    + '<p class="modal-sub">Current: <strong style="color:' + color + '">'
+    + escapeHtml(config.currency) + fmt(current) + '</strong></p>'
+    + '<div class="field"><label for="adjustAmount">Amount</label>'
+    +   '<input type="text" inputmode="decimal" id="adjustAmount" placeholder="0" autocomplete="off"></div>'
     + '<div class="modal-actions">'
     +   '<button class="danger" id="withdrawBtn">Withdraw</button>'
     +   '<button class="primary" id="depositBtn">Add</button>'
     + '</div>'
-    + '<div class="modal-actions">'
-    +   '<button id="cancelBtn" style="flex:1">Cancel</button>'
-    + '</div>';
+    + '<div class="modal-actions"><button id="cancelBtn" style="flex:1">Cancel</button></div>';
 
   modal.classList.add('show');
   const input = document.getElementById('adjustAmount');
@@ -1458,26 +1603,24 @@ function openAdjust(key) {
   document.getElementById('cancelBtn').addEventListener('click', function() {
     modal.classList.remove('show');
   });
-  input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') apply(1);
-  });
+  input.addEventListener('keydown', function(e) { if (e.key === 'Enter') apply(1); });
 }
 
 // ============ Tabs ============
 function switchTab(name) {
+  window._currentTab = name;
   document.querySelectorAll('.tab').forEach(function(x) {
     x.classList.toggle('active', x.dataset.tab === name);
   });
   document.getElementById('spendTab').hidden = name !== 'spend';
+  document.getElementById('weekTab').hidden = name !== 'week';
   document.getElementById('monthTab').hidden = name !== 'month';
   document.getElementById('asideTab').hidden = name !== 'aside';
+  document.getElementById('walletTab').hidden = name !== 'wallet';
   if (name === 'month') renderBreakdown();
   if (name === 'aside') renderAside();
-}
-function setupTabs() {
-  document.querySelectorAll('.tab').forEach(function(t) {
-    t.addEventListener('click', function() { switchTab(t.dataset.tab); });
-  });
+  if (name === 'wallet') renderWallet();
+  if (name === 'week') renderWeek();
 }
 
 // ============ Wire up ============
@@ -1501,11 +1644,10 @@ function setupInputs() {
   splitToggle.addEventListener('change', updateSplitInfo);
   splitCountInput.addEventListener('input', updateSplitInfo);
 
-  document.getElementById('settingsModal').addEventListener('click', function(e) {
-    if (e.target.id === 'settingsModal') e.target.classList.remove('show');
-  });
-  document.getElementById('adjustModal').addEventListener('click', function(e) {
-    if (e.target.id === 'adjustModal') e.target.classList.remove('show');
+  ['settingsModal','adjustModal','walletModal'].forEach(function(id) {
+    document.getElementById(id).addEventListener('click', function(e) {
+      if (e.target.id === id) e.target.classList.remove('show');
+    });
   });
 }
 
@@ -1518,7 +1660,6 @@ function setupInstall() {
     window.matchMedia('(display-mode: standalone)').matches ||
     window.navigator.standalone === true;
   if (isStandalone) return;
-
   if (Store.get(INSTALL_DISMISSED_KEY) === '1') return;
 
   const ua = navigator.userAgent || '';
@@ -1552,19 +1693,16 @@ function setupInstall() {
       tip.hidden = true;
     });
   });
-
   document.getElementById('installDismiss').addEventListener('click', function() {
     tip.hidden = true;
     Store.set(INSTALL_DISMISSED_KEY, '1');
   });
-
   window.addEventListener('appinstalled', function() {
     tip.hidden = true;
     deferredInstallPrompt = null;
   });
 }
 
-// ============ Service worker ============
 function setupServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
   window.addEventListener('load', function() {
@@ -1577,10 +1715,10 @@ try {
   load();
   rollMonth();
   setupInputs();
-  setupTabs();
   setupInstall();
   setupServiceWorker();
   renderAll();
+  switchTab('spend');
   if (config.budget > 0) {
     document.getElementById('amountInput').focus();
   }
@@ -1591,8 +1729,7 @@ try {
     + '<p style="color:#71717a">Paste this in the browser console (F12) if you want help:</p>'
     + '<pre style="background:#f4f4f5;padding:14px;border-radius:8px;font-size:13px;overflow:auto">'
     + String(err && err.stack || err)
-    + '</pre>'
-    + '</div>';
+    + '</pre></div>';
   console.error(err);
 }
 </script>
